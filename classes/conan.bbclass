@@ -131,7 +131,6 @@ tools.build:cxxflags=${formatted_cxxflags}
 tools.build:cflags=${formatted_cflags}
 tools.build:sysroot=${RECIPE_SYSROOT}
 tools.build:compiler_executables={'c': '${cc_name}', 'cpp': '${cxx_name}'}
-tools.build:compiler_executables={'c': '${cc_name}', 'cpp': '${cxx_name}'}
 tools.build:sharedlinkflags=${formatted_ldflags}
 ${@convert_list_to_lines(d, '${CONAN_EXTRA_CONFIG}')}
 EOF
