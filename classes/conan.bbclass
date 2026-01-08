@@ -99,7 +99,7 @@ conan_do_configure() {
             exit 1
         fi
         awk 'BEGIN{split("${CONAN_REMOTE_NAME}",a) split("${CONAN_REMOTE_URL}", b); for (i in a)
-            system("conan remote add --force --index=0 " a[i] " " b[i]) }'
+            system("conan remote add --force --insecure --index=0 " a[i] " " b[i]) }'
     else
         bbnote "No Conan remotes provided (CONAN_REMOTE_URL), using Conan default remotes."
     fi
