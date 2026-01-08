@@ -32,6 +32,7 @@ CONAN_SETTINGS_BUILD_TYPE ?= "${@'Debug' if d.getVar('DEBUG_BUILD') == '1' else 
 CONAN_EXTRA_CFLAGS ?= "${TUNE_CCARGS}"
 CONAN_EXTRA_CXXFLAGS ?= "${TUNE_CCARGS}"
 CONAN_EXTRA_CONFIG ?= ""
+CONAN_EXTRA_SETTINGS ?= "" 
 CONAN_CONF_SOURCES_DOWNLOAD_CACHE ?= "${CONAN_HOME}/download_cache"
 
 export CONAN_HOME
@@ -122,6 +123,7 @@ compiler.version=${cc_major}
 compiler.libcxx=${CONAN_SETTINGS_COMPILER_LIBCXX}
 compiler.cppstd=${CONAN_SETTINGS_COMPILER_CPPSTD}
 build_type=${CONAN_SETTINGS_BUILD_TYPE}
+${@convert_list_to_lines(d, '${CONAN_EXTRA_SETTINGS}')}
 [options]
 ${@convert_list_to_lines(d, '${CONAN_PROFILE_HOST_OPTIONS}')}
 [conf]
